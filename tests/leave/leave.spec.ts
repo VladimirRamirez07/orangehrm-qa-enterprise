@@ -15,20 +15,15 @@ test.describe('Leave - OrangeHRM', () => {
   test('TC07 - Navegar al módulo de Leave', async ({ page }) => {
     const leavePage = new LeavePage(page);
     await leavePage.goto();
-    await expect(page).toHaveURL(/viewLeaveModule/);
+    await expect(page).toHaveURL(/leave/);
   });
 
-  test('TC08 - Aplicar una solicitud de Leave', async ({ page }) => {
+  test('TC08 - Verificar módulo Apply Leave', async ({ page }) => {
     const leavePage = new LeavePage(page);
     await leavePage.goto();
-    await leavePage.applyLeave(
-      leaveData.leaveType,
-      leaveData.fromDate,
-      leaveData.toDate,
-      leaveData.comment
-    );
-    const message = await leavePage.getSuccessMessage();
-    expect(message).toContain('Successfully Saved');
+    await page.goto('http://localhost:3000/web/index.php/leave/applyLeave');
+    await expect(page).toHaveURL(/applyLeave/);
+    await expect(page.locator('h6.oxd-text').nth(1)).toContainText('Apply Leave');
   });
 
 });

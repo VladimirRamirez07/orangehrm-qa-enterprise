@@ -16,7 +16,9 @@ export class LoginPage {
   }
 
   async goto() {
-    await this.page.goto('/web/index.php/auth/login');
+    await this.page.goto('/web/index.php/auth/login', { 
+      waitUntil: 'domcontentloaded' 
+    });
   }
 
   async login(username: string, password: string) {

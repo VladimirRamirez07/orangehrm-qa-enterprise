@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: orangehrm
+    ports:
+      - "3306:3306"
+
+  orangehrm:
+    image: orangehrm/orangehrm:latest
+    ports:
+      - "3000:80"
+    depends_on:
+      - mysql

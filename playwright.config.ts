@@ -1,3 +1,5 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
@@ -6,23 +8,27 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
+  timeout: 90000,
   reporter: [
     ['html'],
     ['allure-playwright']
   ],
   use: {
-    baseURL: 'https://opensource-demo.orangehrmlive.com',
+    baseURL: process.env.ORANGEHRM_URL || 'http://localhost:3000',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     headless: false,
-    navigationTimeout: 60000,  // ← agrega esta línea
-    actionTimeout: 30000,       // ← y esta
+    navigationTimeout: 90000,
+    actionTimeout: 30000,
   },
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { 
+        ...devices['Desktop Chrome'],
+        channel: 'chrome',
+      },
     },
   ],
 });
