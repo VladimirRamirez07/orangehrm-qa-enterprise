@@ -6,6 +6,8 @@ services:
       MYSQL_DATABASE: orangehrm
     ports:
       - "3306:3306"
+    volumes:
+      - ./orangehrm-db-seed.sql:/docker-entrypoint-initdb.d/orangehrm-db-seed.sql
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
       interval: 10s
@@ -19,9 +21,3 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
-    environment:
-      - ORANGEHRM_DATABASE_HOST=mysql
-      - ORANGEHRM_DATABASE_PORT=3306
-      - ORANGEHRM_DATABASE_NAME=orangehrm
-      - ORANGEHRM_DATABASE_USER=root
-      - ORANGEHRM_DATABASE_PASSWORD=root
