@@ -2,25 +2,22 @@
   "name": "orangehrm-qa-enterprise",
   "version": "1.0.0",
   "description": "Enterprise HR system testing with Playwright, TypeScript, Page Object Model and Allure Reports",
-  "main": "index.js",
-  "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/VladimirRamirez07/orangehrm-qa-enterprise.git"
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:auth": "playwright test tests/auth",
+    "test:employees": "playwright test tests/employees",
+    "test:leave": "playwright test tests/leave",
+    "test:dashboard": "playwright test tests/dashboard",
+    "allure:generate": "node_modules\\allure-commandline\\dist\\bin\\allure.bat generate allure-results --clean -o allure-report",
+    "allure:open": "node_modules\\allure-commandline\\dist\\bin\\allure.bat open allure-report",
+    "allure:report": "npm run allure:generate && npm run allure:open"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/VladimirRamirez07/orangehrm-qa-enterprise/issues"
-  },
-  "homepage": "https://github.com/VladimirRamirez07/orangehrm-qa-enterprise#readme",
   "devDependencies": {
-    "@playwright/test": "^1.59.1",
-    "@types/node": "^25.6.2",
-    "allure-commandline": "^2.40.0",
-    "allure-playwright": "^3.7.2",
-    "dotenv": "^17.4.2"
+    "@playwright/test": "^1.40.0",
+    "allure-commandline": "^2.25.0",
+    "allure-playwright": "^2.9.0",
+    "dotenv": "^16.0.0",
+    "typescript": "^5.0.0"
   }
 }

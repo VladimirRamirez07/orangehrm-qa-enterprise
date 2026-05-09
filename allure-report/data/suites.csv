@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","744","TC03 - Login con campos vacíos","chromium","2026-05-08","passed","2026-05-08","Login - OrangeHRM","auth\login.spec.ts","",""
+"","1687","TC08 - Verificar módulo Apply Leave","chromium","2026-05-08","passed","2026-05-08","Leave - OrangeHRM","leave\leave.spec.ts","",""
+"","1340","TC02 - Login fallido con contraseña incorrecta","chromium","2026-05-08","passed","2026-05-08","Login - OrangeHRM","auth\login.spec.ts","",""
+"","1586","TC09 - Dashboard carga correctamente","chromium","2026-05-08","passed","2026-05-08","Dashboard - OrangeHRM","dashboard\dashboard.spec.ts","",""
+"","1576","TC07 - Navegar al módulo de Leave","chromium","2026-05-08","passed","2026-05-08","Leave - OrangeHRM","leave\leave.spec.ts","",""
+"","1294","TC10 - Verificar título del Dashboard","chromium","2026-05-08","passed","2026-05-08","Dashboard - OrangeHRM","dashboard\dashboard.spec.ts","",""
+"","1517","TC01 - Login exitoso con credenciales válidas","chromium","2026-05-08","passed","2026-05-08","Login - OrangeHRM","auth\login.spec.ts","",""
