@@ -27,6 +27,9 @@ jobs:
       - name: Start OrangeHRM with Docker
         run: |
           docker compose up -d
+          echo "Waiting for MySQL..."
+          sleep 45
+          echo "Waiting for OrangeHRM..."
           sleep 30
 
       - name: Wait for OrangeHRM to be ready
