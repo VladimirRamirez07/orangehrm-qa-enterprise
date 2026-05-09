@@ -12,6 +12,8 @@ Enterprise HR system testing with Playwright, TypeScript, Page Object Model and 
 End-to-end test automation suite for OrangeHRM, an enterprise HR management system. Tests cover login, employee management, leave management and dashboard functionality using the Page Object Model pattern.
 
 ## 🏗️ Project Structure
+
+```plaintext
 orangehrm-qa-enterprise/
 ├── pages/                  # Page Object Models
 │   ├── LoginPage.ts
@@ -27,6 +29,7 @@ orangehrm-qa-enterprise/
 ├── utils/                  # Fixtures and helpers
 ├── docker-compose.yml      # Local environment
 └── playwright.config.ts    # Playwright configuration
+```
 ## 🧪 Test Cases
 
 | ID | Module | Description | Status |
