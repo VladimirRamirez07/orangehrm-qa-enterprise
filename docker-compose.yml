@@ -4,10 +4,12 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: orangehrm
+      MYSQL_INITDB_SKIP_TZINFO: "1"
     ports:
       - "3306:3306"
     volumes:
       - ./orangehrm-db-seed.sql:/docker-entrypoint-initdb.d/orangehrm-db-seed.sql
+    command: --innodb-force-recovery=0 --max_allowed_packet=256M
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
       interval: 10s
