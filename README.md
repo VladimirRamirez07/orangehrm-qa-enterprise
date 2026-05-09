@@ -62,10 +62,14 @@ npx playwright install chromium
 
 ### Environment Setup
 
-Create a `.env` file in the root directory:
-ORANGEHRM_URL=http://localhost:3000
-ADMIN_USERNAME=Admin
-ADMIN_PASSWORD=your_password
+Copy `.env.example` to `.env` and fill in your credentials:
+
+```bash
+cp .env.example .env
+```
+
+> ⚠️ First time setup: After running `docker compose up -d`, navigate to `http://localhost:3000` and complete the OrangeHRM Setup Wizard before running tests.
+
 ### Start OrangeHRM locally
 
 ```bash
