@@ -21,7 +21,7 @@ export class EmployeePage {
     this.employeeIdInput = page.locator('.oxd-form .oxd-input').nth(4);
     this.saveButton = page.locator('button[type="submit"]');
     this.searchInput = page.locator('.oxd-table-filter');
-    this.employeeNameInput = page.locator('.oxd-autocomplete-text-input input');
+    this.employeeNameInput = page.locator('.oxd-autocomplete-text-input input').first();
     this.searchButton = page.locator('button[type="submit"]');
   }
 
